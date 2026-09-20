@@ -1,0 +1,265 @@
+/* =========================================
+   PALETA DE CORES VIBRANTE E ALEGRE
+========================================= */
+:root {
+    --cor-primaria: #FF6B6B;
+    /* Rosa/Coral super alegre */
+    --cor-primaria-hover: #FF8E53;
+    /* Tom mais laranjinha para o hover */
+    --cor-secundaria: #4ECDC4;
+    /* Verde mentol vibrante */
+    --cor-terciaria: #FFE66D;
+    /* Amarelo sol para detalhes */
+    --cor-texto: #2D3436;
+    /* Cinza escuro (quase azulado) mais suave que o preto */
+}
+
+body {
+    /* Gradiente suave e divertido no fundo (Pêssego clarinho para Azul bebé) */
+    background: linear-gradient(135deg, #FFF6F5 0%, #F0FBFB 100%);
+    min-height: 100vh;
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--cor-texto);
+}
+
+/* =========================================
+   1. ANIMAÇÕES MAIS ELÁSTICAS
+========================================= */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.logo-animada {
+    animation: bounceIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    color: var(--cor-primaria);
+    text-shadow: 2px 2px 0px rgba(255, 107, 107, 0.2);
+    /* Sombra divertida no texto */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Curva que dá um efeito "mola" */
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.3s;
+}
+
+.delay-3 {
+    animation-delay: 0.5s;
+}
+
+/* =========================================
+   2. BOTÕES COM "GLOW" E DEGRADÊ
+========================================= */
+.btn-principal {
+    background: linear-gradient(45deg, var(--cor-primaria), var(--cor-primaria-hover));
+    color: white;
+    border: none;
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.3);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Efeito elástico no hover */
+}
+
+.btn-principal:hover {
+    color: white;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.5) !important;
+}
+
+.btn-secundario {
+    background-color: white;
+    color: var(--cor-secundaria);
+    border: 2px solid var(--cor-secundaria);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-secundario:hover {
+    background-color: var(--cor-secundaria);
+    color: white;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(78, 205, 196, 0.4) !important;
+}
+
+/* Campos de Formulário (Inputs) */
+.form-control,
+.form-select {
+    border-radius: 12px;
+    border: 2px solid #EBEBEB;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 0 5px rgba(78, 205, 196, 0.2);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   3. GRELHA E CARTÕES (Efeito Flutuante)
+========================================= */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Cartões Interativos mais arredondados */
+.card-interativo {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Ligeira transparência */
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+}
+
+.card-interativo:hover {
+    transform: translateY(-10px);
+    border-color: rgba(78, 205, 196, 0.3);
+    /* Bordo verde-água suave ao passar o rato */
+    box-shadow: 0 20px 40px rgba(78, 205, 196, 0.15) !important;
+    /* Sombra colorida */
+}
+
+/* Cartão pontilhado para adicionar (Vacinas) */
+.card-adicionar {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 3px dashed var(--cor-secundaria);
+    border-radius: 20px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-adicionar i {
+    color: var(--cor-secundaria) !important;
+    transition: transform 0.3s ease;
+}
+
+.card-adicionar:hover {
+    background-color: rgba(78, 205, 196, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--cor-primaria);
+}
+
+.card-adicionar:hover i {
+    color: var(--cor-primaria) !important;
+    transform: scale(1.2) rotate(10deg);
+    /* O ícone de mais dá uma pequena rodada divertida */
+}
+
+/* =========================================
+   4. LAYOUTS ESPECÍFICOS E MENU
+========================================= */
+.menu-fixo {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    /* Efeito de vidro ainda mais forte */
+    z-index: 1030;
+    border-bottom: 2px solid rgba(78, 205, 196, 0.1) !important;
+}
+
+.menu-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 8px;
+    /* Mais espaço para a sombra colorida dos botões não cortar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.menu-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.img-carrossel {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* Ícones Destaque mais amigáveis */
+.icone-destaque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    /* Quase um círculo, mas com formato squircle (quadrado arredondado) */
+}
+
+/* Badges super vibrantes */
+.badge-brincadeira {
+    background-color: var(--cor-terciaria);
+    color: #B38F00;
+    font-weight: bold;
+}
+
+.badge-saude {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.badge-alerta {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+@media (max-width: 767.98px) {
+    .logo-animada {
+        font-size: 2.5rem;
+    }
+
+    .img-carrossel {
+        height: 220px;
+        min-height: 220px;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 20px;
+    }
+}

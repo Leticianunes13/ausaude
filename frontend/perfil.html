@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteira Animal Digital</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="container-perfil mt-5 fade-in delay-2">
+        <!-- Logo -->
+        <div class="container mt-4 mt-md-5">
+            <div class="text-center mb-4">
+                <h1 class="display-4 fw-bold logo-animada">
+                    Meus Pets <i class="bi bi-suit-heart-fill text-danger"></i>
+                </h1>
+                <p>Bem-vindo à sua carteira digital de animais! Aqui você pode gerenciar as informações dos seus pets.
+                </p>
+            </div>
+        </div>
+
+        <!-- Menu Fixo e Rolável -->
+        <div class="sticky-top menu-fixo py-3 mb-4 border-bottom">
+            <div class="container">
+                <nav class="nav flex-nowrap justify-content-md-center gap-3 fade-in delay-1 menu-scroll px-2">
+                    <a class="btn btn-principal px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2 flex-shrink-0"
+                        href="index.html">
+                        <i class="bi bi-house-door-fill"></i> Home
+                    </a>
+                    <a class="btn btn-secundario px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2 flex-shrink-0"
+                        href="perfil.html">
+                        <i class="bi bi-hearts"></i> Meus Pets
+                    </a>
+                    <a class="btn btn-secundario px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2 flex-shrink-0"
+                        href="vacinacao.html">
+                        <i class="bi bi-syringe-fill"></i> Vacinas
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <section class="container mb-5" style="max-width: 600px;">
+            <div class="card p-4 shadow-sm card-interativo border-0">
+                <form id="formCadastroPet">
+                    <label for="pet-name" class="fw-bold mb-1" style="color: var(--cor-secundaria);">Nome do
+                        Pet:</label>
+                    <input type="text" id="pet-name" class="form-control mb-3" required>
+
+                    <label for="pet-species" class="fw-bold mb-1" style="color: var(--cor-secundaria);">Espécie:</label>
+                    <select id="pet-species" class="form-select mb-3" required>
+                        <option value="">Selecione a espécie</option>
+                        <option value="Cachorro">Cachorro</option>
+                        <option value="Gato">Gato</option>
+                    </select>
+
+                    <label for="pet-breed" class="fw-bold mb-1" style="color: var(--cor-secundaria);">Raça:</label>
+                    <input type="text" id="pet-breed" class="form-control mb-3" required>
+
+                    <label for="pet-color" class="fw-bold mb-1" style="color: var(--cor-secundaria);">Cor:</label>
+                    <input type="text" id="pet-color" class="form-control mb-3" required>
+
+                    <label for="pet-year" class="fw-bold mb-1" style="color: var(--cor-secundaria);">Ano de
+                        Nascimento:</label>
+                    <input type="date" id="pet-year" class="form-control mb-3" required>
+
+                    <label for="pet-gender" class="fw-bold mb-1" style="color: var(--cor-secundaria);">Gênero:</label>
+                    <select id="pet-gender" class="form-select mb-3" required>
+                        <option value="">Selecione o gênero</option>
+                        <option value="Macho">Macho</option>
+                        <option value="Fêmea">Fêmea</option>
+                    </select>
+
+                    <button type="submit" class="btn btn-principal w-100 rounded-pill py-3 mt-3 fw-bold fs-5">
+                        Cadastrar Pet
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="container pb-5">
+            <h2 class="h4 text-center mb-4" style="color: var(--cor-secundaria);">Meus Pets Cadastrados</h2>
+
+            <div class="grid-cards" id="listaPetsRender"></div>
+        </section>
+
+        <footer class="text-center text-muted mt-5 pb-4 border-top pt-4 fade-in delay-3">
+            <p>&copy; 2026 Au Saúde. Todos os direitos reservados.</p>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/Cod JS/ausaude/backend/script.js"></script>
+    <script src="/Cod JS/ausaude/frontend/perfil.js"></script>
+
+
+</body>
+
+</html>
